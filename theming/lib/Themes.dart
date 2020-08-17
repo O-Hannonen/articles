@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Themes {
-  static bool _isDarkTheme(BuildContext context) {
-    return MediaQuery.of(context).platformBrightness == Brightness.dark;
-  }
+  static bool get isDarkTheme =>
+      Get.mediaQuery.platformBrightness == Brightness.dark;
 
   /// Used for pages backgrounds
-  static Color backgroundColor(BuildContext context) => _isDarkTheme(context)
-      ? DarkTheme.backgroundColor
-      : LightTheme.backgroundColor;
+  static Color get backgroundColor =>
+      isDarkTheme ? DarkTheme.backgroundColor : LightTheme.backgroundColor;
 
   /// Used for all the textboxes
-  static Color textboxColor(BuildContext context) =>
-      _isDarkTheme(context) ? DarkTheme.textboxColor : LightTheme.textboxColor;
+  static Color get textboxColor =>
+      isDarkTheme ? DarkTheme.textboxColor : LightTheme.textboxColor;
 
   /// Used for all the text
-  static Color textColor(BuildContext context) =>
-      _isDarkTheme(context) ? DarkTheme.textColor : LightTheme.textColor;
+  static Color get textColor =>
+      isDarkTheme ? DarkTheme.textColor : LightTheme.textColor;
 }
 
 class LightTheme {
